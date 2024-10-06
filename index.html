@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HealthCareDashboard</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="./js/data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- --------------------------- Navbar --------------------------->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img src="./img/TestLogo.png" alt="" class="navbar-logo" />
+      </div>
+      <ul class="navbar-center">
+        <li>
+          <a href="" class="navbar-link"
+            ><img src="./img/home_FILL0_wght300_GRAD0_opsz24.png" />Overview</a
+          >
+        </li>
+        <li>
+          <a id="fetch-patient-data" class="navbar-link active"
+            ><img src="./img/group_FILL0_wght300_GRAD0_opsz24.png" />Patients</a
+          >
+        </li>
+        <li>
+          <a href="" class="navbar-link"
+            ><img
+              src="./img/calendar_today_FILL0_wght300_GRAD0_opsz24.png"
+            />Schedule</a
+          >
+        </li>
+        <li>
+          <a href="" class="navbar-link"
+            ><img
+              src="./img/chat_bubble_FILL0_wght300_GRAD0_opsz24.png"
+            />Message</a
+          >
+        </li>
+        <li>
+          <a href="" class="navbar-link"
+            ><img
+              src="./img/credit_card_FILL0_wght300_GRAD0_opsz24.png"
+            />Transactions</a
+          >
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <img
+          class="profile-pic"
+          src="./img/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png"
+          alt=""
+        />
+        <div class="profile-info">
+          <span class="name">Dr.Jose Simmons</span>
+          <span class="job">General Practitioner</span>
+        </div>
+        <div class="profile-last">
+          <img src="./img/settings_FILL0_wght300_GRAD0_opsz24.png" />
+          <img src="./img/more_vert_FILL0_wght300_GRAD0_opsz24.png" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- ----------------- Navbar  Finish----------------- -->
+    <div class="main">
+      <aside class="left-aside">
+        <div class="aside-header">
+          <h1>Patients</h1>
+          <a href="#">
+            <img
+              class="search-icon"
+              src="./img/search_FILL0_wght300_GRAD0_opsz24.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="patient-container" id="patient-container"></div>
+      </aside>
+      <main class="main-content">
+        <div class="top-section">
+          <h1 class="title">Diagnosis History</h1>
+          <div class="blood-pressure">
+            <div class="chart-part">
+              <div class="c-p-header">
+                <h2>Blood Pressure</h2>
+                <div class="period">
+                  <span>Last 6 months</span>
+                  <img
+                    src="./img/expand_more_FILL0_wght300_GRAD0_opsz24.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="chart" id="chart">
+                <canvas
+                  id="bloodPressureChart"
+                  class="bloodPressureChart"
+                ></canvas>
+              </div>
+            </div>
+            <div class="chart-data-part" id="chart-data-part"></div>
+          </div>
+          <div class="patient-deep-details" id="top-section"></div>
+        </div>
+        <div class="bottom-section scroll-thin">
+          <h1>Diagnostic List</h1>
+          <table class="diagnostic-table">
+            <thead>
+              <tr>
+                <th>Problem/Diagnosis</th>
+                <th>Description</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody class="tb" id="bottom-section"></tbody>
+          </table>
+        </div>
+      </main>
+      <aside class="right-aside">
+        <div class="top-aside"></div>
+        <div class="bottom-aside">
+          <h1>Lab Results</h1>
+          <div class="lab-results scroll-thin" id="bottom-aside"></div>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
